@@ -1,16 +1,16 @@
-""
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import "./style.css" 
 import Menu from './menuApi'
 import MenuCard from "./MenuCard"
-import Navbar from './Navbar';
+import Navbar from './Navbar'
+import Heading from './Heading'
 const uniqueList=[
     ...new Set(
         Menu.map((curElem)=>{
             return curElem.category;
         })
     ),
-    "All"
+    "All",
 ]
 
 const Restaurant = () => {
@@ -19,18 +19,19 @@ const Restaurant = () => {
     const filterItem = (category) =>{
 
         if(category==="All"){
-            setMenuData(Menu);
+            setMenuData(Menu)
             return;
         }
 
         const updatedList = Menu.filter((curElem)=>{
-            return curElem.category===category
+            return curElem.category===category;
         })
-        setMenuData(updatedList)
+        setMenuData(updatedList);
     }
     
   return (
     <>
+    {/* <Heading/> */}
     <Navbar filterItem={filterItem} menuList={menuList}/>
     <MenuCard menuData={menuData}/>
     </>
