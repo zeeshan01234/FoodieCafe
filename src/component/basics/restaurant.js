@@ -3,7 +3,6 @@ import "./style.css"
 import Menu from './menuApi'
 import MenuCard from "./MenuCard"
 import Navbar from './Navbar'
-import Heading from './Heading'
 const uniqueList=[
     ...new Set(
         Menu.map((curElem)=>{
@@ -31,7 +30,6 @@ const Restaurant = () => {
     
   return (
     <>
-    {/* <Heading/> */}
     <Navbar filterItem={filterItem} menuList={menuList}/>
     <MenuCard menuData={menuData}/>
     </>
